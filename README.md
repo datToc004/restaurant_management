@@ -1,1 +1,1 @@
-# restaurant_management
+web-template
