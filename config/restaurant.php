@@ -2,10 +2,12 @@
 return [
     'paginate' => [
         'dish' => 6,
+        'table' => 6,
+        'category' => 6,
     ],
     'dishes' => [
         'offset' => 0,
-        'limit' => 1,
+        'limit' => 3,
     ],
     'default' => [
         'quantity' => 1,
