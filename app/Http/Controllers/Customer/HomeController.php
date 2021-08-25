@@ -27,4 +27,32 @@ class HomeController extends Controller
 
         return view('frontend.home.restaurant', compact('dishes'));
     }
+
+    public function profile()
+    {
+        return view('frontend.profile.profile');
+    }
+
+    public function postProfile(ProfileRequest $request)
+    {
+        $user = Auth::user();
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect()->route('home');
+    }
+
+    public function detailDish($id)
+    {
+        $dish = Dish::with('comments')->findOrFail($id);
+
+        return view('frontend.home.detail_dish', compact('dish'));
+    }
+
+    public function postComment(CommentRequest $request)
+    {
+        Comment::create($request->all());
+
+        return redirect()->back();
+    }
 }
