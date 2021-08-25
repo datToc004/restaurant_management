@@ -29,4 +29,33 @@ return [
     'to' => 'To',
     'update_profile' => 'Update profile',
     'submit' => 'Submit',
+    'type' => 'Type',
+    'add_to_cart' => 'Add to cart',
+    'select' => 'Select',
+    'comment' => 'Comment',
+    'description' => 'Description',
+    'code' => 'Code',
+    'max' => 'Max',
+    'category_table' => 'Category',
+    'booking_table' => 'Booking',
+    'time_start' => 'Time start',
+    'time_end' => 'Time end',
+    'sale' => 'Sale',
+    'sale_discription' => 'But the food is super huge',
+    'connect_res' => 'Connect with the restaurant',
+    'about_description' => 'Restaurants dealing in food always bring satisfaction to customers in terms of 
+                        product quality
+                        food, food
+                        They are all made in Vietnam brands that are beautiful in both style and quality,
+                        so they will help you
+                        become pretty
+                        more beautiful..',
+    'delivery' => 'Delivery',
+    'exchange' => 'Exchange',
+    'discount_code' => 'Discount code',
+    'favorite_product' => 'Favorite product',
+    'special' => 'Special',
+    'about_us' => 'About us',
+    'info_tranfer' => 'Information tranfer',
+    'support' => 'Support',
 ];

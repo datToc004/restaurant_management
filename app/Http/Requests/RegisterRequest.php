@@ -36,15 +36,15 @@ class RegisterRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'email không được để trống',
-            'email.email' => 'email chưa nhập đúng',
-            'email.unique' => 'email đã trùng lặp',
-            'password.required' => 'password không được để trống',
-            'password.min' => 'password phải từ 5 kí tự trở lên',
-            'name.required' => 'name không được để trống',
-            'phone.required' => 'phone không được để trống',
-            'sex.required' => 'sex không được để trống',
-            'address.required' => 'address không được để trống',
+            'email.required' => __('messages.email_required'),
+            'email.email' => __('messages.email_email'),
+            'email.unique' => __('messages.email_unique'),
+            'name.required' => __('messages.name_required'),
+            'phone.required' => __('messages.phone_required'),
+            'sex.required' => __('messages.sex_required'),
+            'address.required' => __('messages.address_required'),
+            'password.required' => __('messages.password_required'),
+            'password.min' => __('messages.password_min'),
         ];
     }
 }
