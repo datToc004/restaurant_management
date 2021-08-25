@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Customer\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LanguageController;
@@ -21,3 +22,7 @@ Route::get('registration', [LoginController::class, 'registration'])->name('regi
 Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/language/{lang}', [LanguageController::class, 'changeLanguage'])->name('change-language');
+Route::group(['prefix' => 'home'], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/dishes', [HomeController::class, 'dish'])->name('dishes');
+});
