@@ -1,0 +1,22 @@
+{
+  "name": "project_1",
+  "description": "",
+  "main": "",
+  "authors": [
+    "datToc004 <datdo200499@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/datToc004/restaurant_management.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap.min": "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
+    "start-bower123": "https://github.com/datToc004/file_css_js_project1.git"
+  }
+}
