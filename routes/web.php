@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LanguageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('login', [LoginController::class, 'index'])->name('login')->middleware('CheckLogout');
+Route::post('post-login', [LoginController::class, 'postLogin'])->name('login.post');
+Route::get('registration', [LoginController::class, 'registration'])->name('register');
+Route::post('post-registration', [LoginController::class, 'postRegistration'])->name('register.post');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/language/{lang}', [LanguageController::class, 'changeLanguage'])->name('change-language');
