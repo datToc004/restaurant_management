@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\Session;
 
 class LanguageController extends Controller
 {
-    public function changeLanguage($lang){
+    public function changeLanguage($lang)
+    {
         $language = ($lang == 'vi' || $lang == 'en') ? $lang : config('app.locale');
         Session::put('language', $language);
-        
+
         return redirect()->back();
     }
 }

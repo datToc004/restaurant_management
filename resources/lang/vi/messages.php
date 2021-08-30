@@ -10,6 +10,7 @@ return [
     'email' => 'Email',
     'password' => 'Mật khẩu',
     'phone' => 'Số điện thoại',
+<<<<<<< HEAD
     'home' => 'Trang chủ',
     'language' => 'Ngôn ngữ',
     'restaurant' => 'Nhà hàng',
@@ -29,4 +30,7 @@ return [
     'to' => 'Đến',
     'update_profile' => 'Cập nhật hồ sơ',
     'submit' => 'Xác nhận',
+=======
+    'phone' => 'Số điện thoại',
+>>>>>>> test
 ];
