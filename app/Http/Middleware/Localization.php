@@ -17,10 +17,10 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
-         if (Session::has('language')) {
+        if (Session::has('language')) {
             app()->setLocale(Session::get('language'));
         }
-        
+
         return $next($request);
     }
 }
