@@ -25,4 +25,9 @@ class Order extends Model
     {
         return $this->belongsToMany(Table::class, 'reservations');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

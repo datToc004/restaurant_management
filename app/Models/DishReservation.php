@@ -10,4 +10,9 @@ class DishReservation extends Model
     use HasFactory;
 
     protected $table = "dish_reservation";
+
+    public function dish()
+    {
+        return $this->belongsTo(Dish::class); 
+    }
 }
