@@ -29,4 +29,33 @@ return [
     'to' => 'Đến',
     'update_profile' => 'Cập nhật hồ sơ',
     'submit' => 'Xác nhận',
+    'type' => 'Kiểu',
+    'add_to_cart' => 'Thêm vào giỏ hàng',
+    'select' => 'Lựa chọn',
+    'comment' => 'Bình luận',
+    'description' => 'Mô tả',
+    'about_description' => 'Restaurants  kinh doanh đồ ăn luôn mang tới sự hài lòng cho khách hàng về 
+                        chất lượng sản
+                        phẩm,đồ ăn 
+                        đều mang thương hiệu made in Việt Nam đẹp cả về kiểu cách lẫn chất lượng, nên 
+                        sẽ giúp cho bạn
+                        trở nên xinh
+                        đẹp hơn..',
+    'code' => 'Mã',
+    'max' => 'Tối đa',
+    'category_table' => 'Loại bàn',
+    'booking_table' => 'Đặt bàn',
+    'time_start' => 'Thời gian bắt đầu',
+    'time_end' => 'Thời gian kết thúc',
+    'sale' => 'Sale',
+    'sale_discription' => 'Những món ăn siêu to khổng lồ',
+    'connect_res' => 'Liên hệ nhà hàng',
+    'delivery' => 'Vận chuyển',
+    'exchange' => 'Trao đổi',
+    'discount_code' => 'Mã giảm giá',
+    'favorite_product' => 'Sản phẩm yêu thích',
+    'special' => 'Đặc iệt',
+    'about_us' => 'Thông tin về chúng tôi',
+    'info_tranfer' => 'Thông tin vận chuyển ',
+    'support' => 'Hỗ trợ',
 ];
