@@ -16,7 +16,7 @@ class Reservation extends Model
         return $this->belongsToMany(Dish::class, 'dish_reservation');
     }
 
-    public function dishReservation()
+    public function dishReservations()
     {
         return $this->hasMany(DishReservation::class);
     }

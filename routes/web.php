@@ -24,5 +24,13 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/language/{lang}', [LanguageController::class, 'changeLanguage'])->name('change-language');
 Route::group(['prefix' => 'home'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/dishes', [HomeController::class, 'dish'])->name('dishes');
+    Route::group(['prefix' => 'profile', ['middleware' => 'auth']], function () {
+        Route::get('/', [HomeController::class, 'profile'])->name('profile');
+        Route::put('/post-profile', [HomeController::class, 'postProfile'])->name('profile.post');
+    });
+    Route::group(['prefix' => 'dishes'], function () {
+        Route::get('/dishes', [HomeController::class, 'dish'])->name('dishes');
+        Route::get('/detail-dish/{id}', [HomeController::class, 'detailDish'])->name('dish.detail');
+        Route::post('/comment-dish', [HomeController::class, 'postComment'])->name('dish.comment')->middleware('auth');
+    });
 });

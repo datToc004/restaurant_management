@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Reservation;
 use App\Models\Table;
+use App\Models\User;
+use App\Models\Receipt;
 
 class Order extends Model
 {
@@ -24,5 +26,10 @@ class Order extends Model
     public function tables()
     {
         return $this->belongsToMany(Table::class, 'reservations');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
