@@ -21,7 +21,7 @@ class CheckRole
             return redirect('login');
         }
         $user = Auth::user();
-        if (Auth::user()->role_id == 3) {
+        if (Auth::user()->role_id == config('restaurant.role_user.customer')) {
             return redirect('home');
         }
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Manager\CategoryTableController;
+use App\Http\Controllers\Manager\OrderController;
 use App\Http\Controllers\Manager\TableController;
 
 /*
@@ -61,4 +62,21 @@ Route::group([
 ], function () {
     Route::resource('categories', CategoryTableController::class);
     Route::resource('tables', TableController::class);
+    Route::resource('dishes', DishController::class);
+    Route::group(['prefix' => 'orders'], function () {
+        Route::get('/', [OrderController::class, 'index'])->name('orders.index');
+        Route::get('accept-order/{id}', [OrderController::class, 'acceptOrder'])->name('orders.accept');
+        Route::get('delete-order/{id}', [OrderController::class, 'deleteOrder'])->name('orders.delete');
+        Route::get('/accept-orders', [OrderController::class, 'getAcceptOrders'])->name('orders.accept.get');
+        Route::get('/bill/{id}', [OrderController::class, 'getBill'])->name('bill.get');
+        Route::post('/post-bill/{id}', [OrderController::class, 'postBill'])->name('bill.post');
+        Route::get('get-time', [OrderController::class, 'getTime'])->name('order.add.time.get');
+        Route::post('post-time', [OrderController::class, 'postTime'])->name('order.add.time.post');
+        Route::get('add-order', [OrderController::class, 'addOrder'])->name('order.add');
+        Route::post('post-add-order', [OrderController::class, 'postAddOrder'])->name('order.add.post');
+        Route::get('get-edit-time/{id}', [OrderController::class, 'getEditTime'])->name('order.edit.time.get');
+        Route::post('post-edit-time', [OrderController::class, 'postEditTime'])->name('order.edit.time.post');
+        Route::get('edit-time/{id}', [OrderController::class, 'editOrder'])->name('order.edit');
+        Route::post('post-edit-order/{id}', [OrderController::class, 'postEditOrder'])->name('order.edit.post');
+    });
 });
