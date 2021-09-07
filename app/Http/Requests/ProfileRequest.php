@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class ProfileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'email' => 'required|email|unique:users,email,' . $this->user()->id,
             'phone' => 'required',
             'sex' => 'required',
             'address' => 'required',
@@ -43,8 +42,6 @@ class RegisterRequest extends FormRequest
             'phone.required' => __('messages.phone_required'),
             'sex.required' => __('messages.sex_required'),
             'address.required' => __('messages.address_required'),
-            'password.required' => __('messages.password_required'),
-            'password.min' => __('messages.password_min'),
         ];
     }
 }
