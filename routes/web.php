@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Customer\HomeController;
+use App\Http\Controllers\Customer\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LanguageController;
@@ -32,5 +33,22 @@ Route::group(['prefix' => 'home'], function () {
         Route::get('/dishes', [HomeController::class, 'dish'])->name('dishes');
         Route::get('/detail-dish/{id}', [HomeController::class, 'detailDish'])->name('dish.detail');
         Route::post('/comment-dish', [HomeController::class, 'postComment'])->name('dish.comment')->middleware('auth');
+    });
+    Route::get('timeform', [ReservationController::class, 'timeForm'])->name('time.get')->middleware('auth');
+    Route::post('post-time', [ReservationController::class, 'postTime'])->name('time.post')->middleware('auth');
+    Route::group(['prefix' => 'reservation', ['middleware' => 'CheckReservation']], function () {
+        Route::get('list-table', [ReservationController::class, 'getTables'])->name('tables.get');
+        Route::get('/detail-table/{id}', [ReservationController::class, 'detailTable'])->name('table.detail');
+        Route::get('/cart', [ReservationController::class, 'getCart'])->name('cart.get');
+        Route::get('/add-table', [ReservationController::class, 'addCartTable'])->name('cart.table.add');
+        Route::get('/add-dish', [ReservationController::class, 'addCartDish'])->name('cart.dish.add')
+            ->middleware('CheckTable');
+        Route::get('remove-cart-dish/{id}', [ReservationController::class, 'removeCartDish'])
+            ->name('cart.dish.remove');
+        Route::get('update-cart-dish/{rowId}/{qty}', [ReservationController::class, 'updateCartDish'])
+            ->name('cart.dish.update');
+        Route::get('remove-cart-table/{id}', [ReservationController::class, 'removeCartTable'])
+            ->name('cart.table.remove');
+        Route::get('checkout', [ReservationController::class, 'checkoutGet'])->name('checkout.get');
     });
 });
