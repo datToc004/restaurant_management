@@ -5,6 +5,8 @@ use App\Http\Controllers\Customer\ReservationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\Manager\CategoryTableController;
+use App\Http\Controllers\Manager\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +53,12 @@ Route::group(['prefix' => 'home'], function () {
             ->name('cart.table.remove');
         Route::get('checkout', [ReservationController::class, 'checkoutGet'])->name('checkout.get');
     });
+});
+
+Route::group([
+    'prefix' => 'manager',
+    'middleware' => 'CheckRole:' . config('restaurant.role_user.manager') . ',' . config('restaurant.role_user.admin')
+], function () {
+    Route::resource('categories', CategoryTableController::class);
+    Route::resource('tables', TableController::class);
 });

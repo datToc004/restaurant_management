@@ -87,7 +87,7 @@ class DishController extends Controller
         $dish->description = $request->description;
         $dish->price = $request->price;
         if ($request->hasFile('img')) {
-            if ($dish->img != 'no-img.jpg') {
+            if ($dish->img != config('restaurant.default.img')) {
                 unlink(storage_path('app/public/dishes/' . $dish->img));
             }
             $file = $request->img;
