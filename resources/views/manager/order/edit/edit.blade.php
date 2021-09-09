@@ -79,10 +79,6 @@ class="active"
                                                                 name="dishes[{{ $dishReservation->dish->code }}][qty]"
                                                                 class="form-control"
                                                                 value="{{ $dishReservation->amount }}">
-                                                            <input type="hidden"
-                                                                name="dishes[{{ $dishReservation->dish->code }}][price]"
-                                                                class="form-control"
-                                                                value="{{ $dishReservation->dish->price }}">
                                                             <div class="input-group-append">
                                                                 <button id="removeRow1" type="button"
                                                                     class="btn btn-danger">{{ __('messages.remove') }}</button>
