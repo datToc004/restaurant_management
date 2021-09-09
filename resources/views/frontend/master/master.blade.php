@@ -31,9 +31,10 @@
     <!-- Theme style  -->
     <link rel="stylesheet" href="{{ asset('bower_components/start-bower123/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/start-bower123/css/custome.css') }}">
+
     <!-- Modernizr JS -->
     <script src="{{ asset('bower_components/start-bower123/js/modernizr-2.6.2.min.js') }}"></script>
-
+    @yield('css_detail')
 
 </head>
 

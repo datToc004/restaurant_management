@@ -11,7 +11,8 @@
                         <div class="col-md-5">
                             <div class="product-entry">
                                 <div class="product-img">
-                                    <img src="{{ asset('storage/' . $dish->img) }}">
+                                    <img class="product-img" width="268" height="30"
+                                        src="{{ asset('storage/dishes/' . $dish->img) }}">
                                 </div>
                             </div>
                         </div>
@@ -24,6 +25,7 @@
                                         <span>{{ number_format($dish->price, 0, '', ',') }} VNĐ</span>
                                     </p>
                                     <p>{{ __('messages.type') }} : {{ $dish->type }}</p>
+                                    <p>{{ __('messages.description') }} : {{ $dish->description }}</p>
                                     <h4>{{ __('messages.select') }}</h4>
                                     <div class="row row-pb-sm">
                                         <div class="col-md-4">
@@ -55,55 +57,72 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row">
-                    <div class="col-md-12 tabulation">
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab"
-                                    href="#description">{{ __('messages.description') }}</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div id="description" class="tab-pane fade in active">
-                                {{ $dish->description }}
+        <br />
+        <section>
+            <div class="rt-container">
+                <div class="col-rt-12">
+                    <div class="content">
+                        <h2 id="numberComment">({{ $dish->comments->count() }}) Readers Comments </h2>
+                        <div id="reader">
+                            <ol>
+                                <li class="comments">
+                                    @foreach ($comments as $comment)
+                                        <div class="comment_box">
+                                            <a> <img src="/bower_components/start-bower123/images/avatar.jpg" alt="
+                                                avatar"> </a>
+                                            <div class="inside_comment">
+                                                <div class="comment-meta">
+                                                    <div class="commentsuser">{{ $comment->user->name }}</div>
+                                                    <div class="comment_date">{{ $comment->created_at }}</div>
+                                                </div>
+                                            </div>
+                                            <div class="comment-body">
+                                                <p>{{ $comment->note }}</p>
+                                            </div>
+                                            <div class="reply"> <a>{{ __('messages.reply') }}</a> </div>
+                                            <div class="arrow-down"></div>
+                                        </div>
+                                    @endforeach
+
+                                </li>
+                            </ol>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {!! $comments->links() !!}
+                                </div>
                             </div>
+                        </div>
+                        <div id="respond">
+                            <form id="commentForm" method="post" class="cmxform">
+                                @csrf
+                                <div class="commentfields">
+                                    <h3>{{ __('messages.comment') }} <span>*</span></h3>
+                                    <textarea id="ccomment" class="comment-textarea required" name="note"></textarea>
+                                    {!! showError($errors, 'note') !!}
+                                    <input type="hidden" name="dish_id" value="{{ $dish->id }}" />
+                                    @if (Auth::id())
+                                        <input type="hidden" name="user_id" value="{{ Auth::id() }}" />
+                                    @endif
+                                </div>
+                                <div class="commentfields">
+                                    <input class="commentbtn" type="submit" value="{{ __('messages.comment') }}">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-md-7">
-                <h4>{{ __('messages.comment') }}</h4>
-                <form method="post" action="{{ route('dish.comment') }}">
-                    @csrf
-                    <div class="form-group">
-                        <input class="form-control" name="note" />
-                        {!! showError($errors, 'note') !!}
-                        <input type="hidden" name="dish_id" value="{{ $dish->id }}" />
-                        @if (isset(Auth::user()->id))
-                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
-                        @endif
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Add Comment" />
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-5">
-                <div class="cart-detail">
-                    @foreach ($dish->comments as $comment)
-                        <h3>{{ $comment->user->name }}</h3>
-                        <div>{{ $comment->note }}</div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
+        </section>
     </div>
+</div>
 </div>
 <!-- end main -->
 @endsection
 @section('script_detail')
 <script src="{{ asset('bower_components/start-bower123/js/script_detail.js') }}"></script>
+<script src="{{ asset('bower_components/start-bower123/js/comment.js') }}"></script>
+@endsection
+@section('css_detail')
+<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/start-bower123/css/demo.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/start-bower123/css/comment.css') }}" />
 @endsection
