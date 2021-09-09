@@ -10,8 +10,9 @@
                     @foreach ($dishes as $dish)
                         <div class="col-md-4 text-center">
                             <div class="product-entry">
-                                <div class="product-img" style="background-image: url(/storage/{{ $dish->img }});">
-
+                                <div class="product-img">
+                                    <img class="product-img" width="260" height="44"
+                                        src="{{ asset('storage/dishes/' . $dish->img) }}">
                                     <div class="cart">
                                         <p>
                                             <span class="addtocart"><a href="#"><i
