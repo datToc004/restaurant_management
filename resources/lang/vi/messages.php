@@ -34,11 +34,9 @@ return [
     'select' => 'Lựa chọn',
     'comment' => 'Bình luận',
     'description' => 'Mô tả',
-    'about_description' => 'Restaurants  kinh doanh đồ ăn luôn mang tới sự hài lòng cho khách hàng về 
-                        chất lượng sản
+    'about_description' => 'Restaurants  kinh doanh đồ ăn luôn mang tới sự hài lòng cho khách hàng về chất lượng sản
                         phẩm,đồ ăn 
-                        đều mang thương hiệu made in Việt Nam đẹp cả về kiểu cách lẫn chất lượng, nên 
-                        sẽ giúp cho bạn
+                        đều mang thương hiệu made in Việt Nam đẹp cả về kiểu cách lẫn chất lượng, nên sẽ giúp cho bạn
                         trở nên xinh
                         đẹp hơn..',
     'code' => 'Mã',
@@ -113,6 +111,9 @@ return [
     'add_order' => 'thêm đặt bàn',
     'continue' => 'tiếp tục',
     'normal' => 'bình thường',
+    'list_user' => 'danh sách người dùng',
+    'info_user' => 'Thông tin',
+    'role' => 'vai trò',
     'name_required' => 'tên không thể trống',
     'name_unique' => 'tên không thể trùng',
     'comment_required' => 'bình luận không thể trống',

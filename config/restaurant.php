@@ -4,6 +4,7 @@ return [
         'dish' => 6,
         'table' => 6,
         'category' => 6,
+        'user' => 6,
     ],
     'dishes' => [
         'offset' => 0,
@@ -18,11 +19,14 @@ return [
         'quantity' => 1,
         'price' => 0,
         'weight' => 0,
-        'img' => 'no-img.jpg',
     ],
     'role_user' => [
         'customer' => 1,
         'manager' => 2,
         'admin' => 3,
+    ],
+    'status_user' => [
+        'block' => 0,
+        'unblock' => 1,
     ],
 ];

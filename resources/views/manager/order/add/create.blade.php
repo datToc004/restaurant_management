@@ -61,11 +61,11 @@ class="active"
                                                         @foreach ($dishes as $dish)
                                                             <option value="{{ $dish->id }}">{{ $dish->name }}
                                                             </option>
+                                                            <input type="hidden" name="dishes[0][price]"
+                                                                class="form-control" value="{{ $dish->price }}">
                                                         @endforeach
                                                     </select>
                                                     <input type="number" name="dishes[0][qty]" class="form-control">
-                                                    <input type="hidden" name="dishes[0][price]" class="form-control"
-                                                        value="{{ $dish->price }}">
                                                     <div class="input-group-append">
                                                         <button id="removeRow1" type="button"
                                                             class="btn btn-danger">{{ __('messages.remove') }}</button>

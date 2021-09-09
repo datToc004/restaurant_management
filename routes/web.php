@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Manager\CategoryTableController;
+use App\Http\Controllers\Manager\DishController;
 use App\Http\Controllers\Manager\OrderController;
 use App\Http\Controllers\Manager\TableController;
+use App\Http\Controllers\Manager\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,5 +80,13 @@ Route::group([
         Route::post('post-edit-time', [OrderController::class, 'postEditTime'])->name('order.edit.time.post');
         Route::get('edit-time/{id}', [OrderController::class, 'editOrder'])->name('order.edit');
         Route::post('post-edit-order/{id}', [OrderController::class, 'postEditOrder'])->name('order.edit.post');
+    });
+    Route::group([
+        'prefix' => 'users',
+        'middleware' => 'CheckRole:' . config('restaurant.role_user.admin')
+    ], function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+        Route::get('block/{id}', [UserController::class, 'blockUser'])->name('users.block');
+        Route::get('unblock/{id}', [UserController::class, 'unBlockUser'])->name('users.unblock');
     });
 });
