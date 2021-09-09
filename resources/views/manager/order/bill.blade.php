@@ -142,7 +142,7 @@ class="active"
                                 <tbody>
                                 </tbody>
                             </table>
-                            <form action="{{ route('bill.post', $dish->id) }}" method="post">
+                            <form action="{{ route('bill.post', $order->id) }}" method="post">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <div class="form-group">
                                     <label>{{ __('messages.payment_method') }}</label>
