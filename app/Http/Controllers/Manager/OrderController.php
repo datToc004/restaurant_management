@@ -98,7 +98,8 @@ class OrderController extends Controller
     {
         $subTotal = 0;
         foreach ($dishes as $dish) {
-            $subTotal += $dish['qty'] * $dish['price'];
+            $dish_o = Dish::findOrFail($dish['id']);
+            $subTotal += $dish['qty'] * $dish_o->price;
         }
 
         return $subTotal;
