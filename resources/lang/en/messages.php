@@ -21,6 +21,7 @@ return [
     'take_care_cus' => 'Take care of customer',
     'info_contact' => 'infomation of contact',
     'information' => 'Information',
+    'info_customer' => ' Information customer',
     'dish' => 'Dish',
     'dish_description' => 'Here are some of the shop\'s dishes',
     'search' => 'Search',
