@@ -61,8 +61,6 @@ class="active"
                                                         @foreach ($dishes as $dish)
                                                             <option value="{{ $dish->id }}">{{ $dish->name }}
                                                             </option>
-                                                            <input type="hidden" name="dishes[0][price]"
-                                                                class="form-control" value="{{ $dish->price }}">
                                                         @endforeach
                                                     </select>
                                                     <input type="number" name="dishes[0][qty]" class="form-control">

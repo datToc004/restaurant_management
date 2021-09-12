@@ -57,8 +57,7 @@ class="active"
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>{{ __('messages.description') }}</label>
-                                    <textarea id="editor" name="description"
-                                        style="width: 100%;height: 100px;"></textarea>
+                                    <textarea id="editor" name="description" class="editstyle"></textarea>
                                 </div>
                                 <button class="btn btn-success" type="submit">{{ __('messages.add') }}</button>
                             </div>

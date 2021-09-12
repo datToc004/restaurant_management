@@ -7,7 +7,7 @@ class="active"
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Thêm sản phẩm</h1>
+            <h1 class="page-header">{{ __('messages.add_table') }}</h1>
         </div>
     </div>
 
@@ -68,7 +68,7 @@ class="active"
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>{{ __('messages.description') }}</label>
-                                    <textarea id="editor" name="description"></textarea>
+                                    <textarea id="editor" name="description" class="editstyle"></textarea>
                                 </div>
                                 <button class="btn btn-success" type="submit">{{ __('messages.add') }}</button>
                             </div>

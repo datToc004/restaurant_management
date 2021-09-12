@@ -30,6 +30,14 @@ class="active"
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
+                            @if (session('notification'))
+                                <div class="alert bg-success" role="alert">
+                                    <svg class="glyph stroked checkmark">
+                                        <use xlink:href="#stroked-checkmark"></use>
+                                    </svg>{{ session('notification') }}<a href="#" class="pull-right"><span
+                                            class="glyphicon glyphicon-remove"></span></a>
+                                </div>
+                            @endif
                             <table class="table table-bordered">
 
                                 <thead>

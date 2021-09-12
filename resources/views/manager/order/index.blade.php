@@ -22,7 +22,14 @@ class="active"
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-
+                            @if (session('notification'))
+                                <div class="alert bg-success" role="alert">
+                                    <svg class="glyph stroked checkmark">
+                                        <use xlink:href="#stroked-checkmark"></use>
+                                    </svg>{{ session('notification') }}<a href="#" class="pull-right"><span
+                                            class="glyphicon glyphicon-remove"></span></a>
+                                </div>
+                            @endif
                             <a href="{{ route('orders.accept.get') }}"
                                 class="btn btn-success">{{ __('messages.list_order_approval') }}</a>
                             <table class="table table-bordered" style="margin-top:20px;">
@@ -53,15 +60,14 @@ class="active"
                                             </td>
                                             <td>
                                                 <a href="{{ route('orders.accept', $order->id) }}"
-                                                    class="btn btn-warning"><i class="fa fa-pencil"
+                                                    class="btn btn-success"><i class="fa fa-pencil"
                                                         aria-hidden="true"></i>{{ __('messages.accept') }}</a>
                                                 <a href="{{ route('orders.delete', $order->id) }}}"
-                                                    class="btn btn-warning"><i class="fa fa-pencil"
+                                                    class="btn btn-danger"><i class="fa fa-pencil"
                                                         aria-hidden="true"></i>{{ __('messages.delete') }}</a>
                                                 <a href="{{ route('order.edit.time.get', $order->id) }}"
                                                     class="btn btn-warning"><i class="fa fa-pencil"
                                                         aria-hidden="true"></i>{{ __('messages.edit') }}</a>
-
                                             </td>
                                         </tr>
                                     @endforeach

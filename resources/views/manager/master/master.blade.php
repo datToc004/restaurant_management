@@ -9,12 +9,13 @@
     <base href="{{ asset('manager') }}/">
     <link href="{{ asset('bower_components/start-bower123/backend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bower_components/start-bower123/backend/css/datepicker3.css') }}" rel="stylesheet">
-    <link href="{{ asset('bower_components/start-bower123/backend/css/styles.css') }}" rel="stylesheet">
+
     <!--Icons-->
 
     <script src="js/lumino.glyphs.js"></script>
     <link rel="stylesheet" href="{{ asset('bower_components/start-bower123/all/index.css') }}"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="{{ asset('bower_components/start-bower123/backend/css/styles.css') }}" rel="stylesheet">
 </head>
 
 <body>

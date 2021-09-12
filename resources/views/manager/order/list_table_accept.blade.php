@@ -22,7 +22,6 @@ class="active"
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-
                             <a href="{{ route('orders.index') }}"
                                 class="btn btn-success">{{ __('messages.list_order_pending') }}</a>
                             <a href="{{ route('order.add.time.get') }}"
@@ -55,10 +54,10 @@ class="active"
                                             </td>
                                             <td>
                                                 <a href="{{ route('bill.get', $order->id) }}"
-                                                    class="btn btn-warning"><i class="fa fa-pencil"
+                                                    class="btn btn-success"><i class="fa fa-pencil"
                                                         aria-hidden="true"></i>{{ __('messages.export_bill') }}</a>
                                                 <a href="{{ route('orders.delete', $order->id) }}}"
-                                                    class="btn btn-warning"><i class="fa fa-pencil"
+                                                    class="btn btn-danger"><i class="fa fa-pencil"
                                                         aria-hidden="true"></i>{{ __('messages.delete') }}</a>
                                                 <a href="{{ route('order.edit.time.get', $order->id) }}"
                                                     class="btn btn-warning"><i class="fa fa-pencil"
