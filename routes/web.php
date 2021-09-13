@@ -55,6 +55,7 @@ Route::group(['prefix' => 'home'], function () {
         Route::get('remove-cart-table/{id}', [ReservationController::class, 'removeCartTable'])
             ->name('cart.table.remove');
         Route::get('checkout', [ReservationController::class, 'checkoutGet'])->name('checkout.get');
+        Route::get('complete', [ReservationController::class, 'complete'])->name('complete.get');
     });
 });
 

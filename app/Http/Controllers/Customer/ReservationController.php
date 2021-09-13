@@ -145,8 +145,15 @@ class ReservationController extends Controller
         }
         Cart::instance('tables')->destroy();
         Cart::instance('dishes')->destroy();
-        Session::forget('time');
+        
 
-        return redirect()->route('home');
+        return redirect()->route('complete.get');
+    }
+
+    public function complete()
+    {
+        Session::forget('time');
+        
+        return view('frontend.reservation.complete');
     }
 }

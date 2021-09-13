@@ -11,8 +11,8 @@
                         <div class="col-md-5">
                             <div class="product-entry">
                                 <div class="product-img">
-                                    <img class="product-img" width="268" height="30"
-                                        src="{{ asset('storage/dishes/' . $dish->img) }}">
+                                    <img class="img-thumbnail" width="350" height="350"
+                                        src="{{ asset('/storage/dishes/' . $dish->img) }}">
                                 </div>
                             </div>
                         </div>
