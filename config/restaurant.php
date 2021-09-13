@@ -9,7 +9,7 @@ return [
     ],
     'dishes' => [
         'offset' => 0,
-        'limit' => 4,
+        'limit' => 3,
     ],
     'status_order' => [
         'not_accept' => 0,
