@@ -30,6 +30,14 @@ class="active"
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
+                            @if (session('notification'))
+                                <div class="alert bg-success" role="alert">
+                                    <svg class="glyph stroked checkmark">
+                                        <use xlink:href="#stroked-checkmark"></use>
+                                    </svg>{{ session('notification') }}<a href="#" class="pull-right"><span
+                                            class="glyphicon glyphicon-remove"></span></a>
+                                </div>
+                            @endif
                             <a href="{{ route('dishes.create') }}"
                                 class="btn btn-primary">{{ __('messages.add_dish') }}</a>
                             <table class="table table-bordered" style="margin-top:20px;">
@@ -62,13 +70,14 @@ class="active"
                                             <td>{{ $dish->code }}</td>
                                             <td>{{ number_format($dish->price, 0, '', ',') }}</td>
                                             <td>
-                                                <form action="{{ route('dishes.edit', $dish->id) }}" method="get">
+                                                <form class="freestyle"
+                                                    action="{{ route('dishes.edit', $dish->id) }}" method="get">
                                                     <button class="btn btn-sm btn-warning rounded-0">
                                                         {{ __('edit') }}
                                                     </button>
                                                 </form>
-                                                <form action="{{ route('dishes.destroy', $dish->id) }}"
-                                                    method="post">
+                                                <form class="freestyle"
+                                                    action="{{ route('dishes.destroy', $dish->id) }}" method="post">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="hidden" name="_method" value="delete">
                                                     <button class="btn btn-sm btn-danger rounded-0">

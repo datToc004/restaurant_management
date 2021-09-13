@@ -30,11 +30,11 @@ class="active"
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-                            @if (session('thong_bao'))
+                            @if (session('notification'))
                                 <div class="alert bg-success" role="alert">
                                     <svg class="glyph stroked checkmark">
                                         <use xlink:href="#stroked-checkmark"></use>
-                                    </svg>{{ session('thong_bao') }}<a href="#" class="pull-right"><span
+                                    </svg>{{ session('notification') }}<a href="#" class="pull-right"><span
                                             class="glyphicon glyphicon-remove"></span></a>
                                 </div>
                             @endif
@@ -82,13 +82,15 @@ class="active"
                                             </td>
                                             <td>{{ $table->category->name }}</td>
                                             <td>
-                                                <form action="{{ route('tables.edit', $table->id) }}" method="get">
+                                                <form class="freestyle"
+                                                    action="{{ route('tables.edit', $table->id) }}" method="get">
                                                     <button class="btn btn-sm btn-warning rounded-0">
                                                         {{ __('edit') }}
                                                     </button>
                                                 </form>
-                                                <form action="{{ route('tables.destroy', $table->id) }}"
-                                                    method="post">
+
+                                                <form class="freestyle"
+                                                    action="{{ route('tables.destroy', $table->id) }}" method="post">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     <input type="hidden" name="_method" value="delete">
                                                     <button class="btn btn-sm btn-danger rounded-0">

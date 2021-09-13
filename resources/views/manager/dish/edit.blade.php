@@ -63,7 +63,7 @@ class="active"
                                 <div class="form-group">
                                     <label>{{ __('messages.description') }}</label>
                                     <textarea id="editor" name="description"
-                                        style="width: 100%;height: 100px;">{{ $dish->description }}</textarea>
+                                        class="editstyle">{{ $dish->description }}</textarea>
                                 </div>
                                 <button class="btn btn-success" type="submit">{{ __('messages.edit') }}</button>
                             </div>

@@ -17,6 +17,7 @@
                                     <li><a href="{{ route('cart.get') }}">{{ __('messages.cart') }}</a></li>
                                     <li><a href="{{ route('time.get') }}">{{ __('messages.booking_table') }}</a>
                                     </li>
+                                    <li><a href="{{ route('tables.get') }}">{{ __('messages.table') }}</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
