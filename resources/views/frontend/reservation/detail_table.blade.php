@@ -10,9 +10,9 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="product-entry">
-                                <div class="product-img">
-                                    <img class="img-thumbnail" width="350" height="350"
-                                        src="{{ asset('/storage/tables/' . $table->img) }}">
+                                <div class="product-img"
+                                    style="background-image: url({{ asset('storage/' . $table->img) }});">
+
                                 </div>
 
                             </div>
@@ -25,7 +25,6 @@
                                     <p>{{ __('messages.code') }} : {{ $table->code }}</p>
                                     <p>{{ __('messages.max') }} : {{ $table->max }}</p>
                                     <p>{{ __('messages.category_table') }} : {{ $table->category->name }}</p>
-                                    <p>{{ __('messages.description') }} : {{ $table->description }}</p>
                                     <input type="hidden" name="id_table" value="{{ $table->id }}">
                                     <p><button class="btn btn-primary btn-addtocart" type="submit">
                                             {{ __('messages.add_to_cart') }}</button></p>
@@ -36,6 +35,24 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-12 tabulation">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab"
+                                    href="#description">{{ __('messages.description') }}</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="description" class="tab-pane fade in active">
+                                {{ $table->description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
     </div>
 </div>
 <!-- end main -->
