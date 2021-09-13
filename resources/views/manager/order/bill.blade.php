@@ -18,7 +18,7 @@ class="active"
         <div class="col-xs-12 col-md-12 col-lg-12">
 
             <div class="panel panel-primary">
-                <div class="panel-heading">{{ __('messages.Bill') }}</div>
+                <div class="panel-heading">{{ __('messages.bill') }}</div>
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
