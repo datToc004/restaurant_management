@@ -5,6 +5,7 @@ return [
         'table' => 6,
         'category' => 6,
         'user' => 6,
+        'comment' => 6,
     ],
     'dishes' => [
         'offset' => 0,

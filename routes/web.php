@@ -41,7 +41,7 @@ Route::group(['prefix' => 'home'], function () {
     });
     Route::get('timeform', [ReservationController::class, 'timeForm'])->name('time.get')->middleware('auth');
     Route::post('post-time', [ReservationController::class, 'postTime'])->name('time.post')->middleware('auth');
-    Route::group(['prefix' => 'reservation', ['middleware' => 'CheckReservation']], function () {
+    Route::group(['prefix' => 'reservation', 'middleware' => 'CheckReservation'], function () {
         Route::get('list-table', [ReservationController::class, 'getTables'])->name('tables.get');
         Route::get('/detail-table/{id}', [ReservationController::class, 'detailTable'])->name('table.detail');
         Route::get('/cart', [ReservationController::class, 'getCart'])->name('cart.get');

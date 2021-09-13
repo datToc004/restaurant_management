@@ -44,15 +44,23 @@ class HomeController extends Controller
 
     public function detailDish($id)
     {
-        $dish = Dish::with('comments')->findOrFail($id);
+        $dish = Dish::findOrFail($id);
+        $comments = Comment::where('dish_id', $id)->with('user')->paginate(config('restaurant.paginate.comment'));
 
-        return view('frontend.home.detail_dish', compact('dish'));
+        return view('frontend.home.detail_dish', compact('dish', 'comments'));
     }
 
     public function postComment(CommentRequest $request)
     {
-        Comment::create($request->all());
+        $comment = Comment::create($request->all());
+        $time = date('Y-m-d H:i:s', strtotime($comment->created_at));
+        $numberComment = Dish::findOrFail($request->dish_id)->comments->count();
 
-        return redirect()->back();
+        return response()->json([
+            'bool' => true,
+            'user_name' => Auth::user()->name,
+            'created_at' => $time,
+            'numberComment' => $numberComment,
+        ]);
     }
 }
