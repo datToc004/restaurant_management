@@ -21,6 +21,14 @@ class="active"
                 <div class="panel-heading">{{ __('messages.list_order_approval') }}</div>
                 <div class="panel-body">
                     <div class="bootstrap-table">
+                        @if (session('notification'))
+                            <div class="alert bg-success" role="alert">
+                                <svg class="glyph stroked checkmark">
+                                    <use xlink:href="#stroked-checkmark"></use>
+                                </svg>{{ session('notification') }}<a href="#" class="pull-right"><span
+                                        class="glyphicon glyphicon-remove"></span></a>
+                            </div>
+                        @endif
                         <div class="table-responsive">
                             <a href="{{ route('orders.index') }}"
                                 class="btn btn-success">{{ __('messages.list_order_pending') }}</a>

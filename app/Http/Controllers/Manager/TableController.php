@@ -60,7 +60,7 @@ class TableController extends Controller
         }
         $table->save();
 
-        return redirect()->route('tables.index');
+        return redirect()->route('tables.index')->with('notification', __('messages.no_add_table'));
     }
 
     /**
@@ -107,7 +107,7 @@ class TableController extends Controller
         }
         $table->save();
 
-        return redirect()->route('tables.index');
+        return redirect()->route('tables.index')->with('notification', __('messages.no_edit_dish'));
     }
 
     /**
@@ -121,6 +121,6 @@ class TableController extends Controller
         $table = Table::findOrFail($id);
         $table->delete();
 
-        return redirect()->route('tables.index');
+        return redirect()->route('tables.index')->with('notification', __('messages.no_delete_dish'));
     }
 }

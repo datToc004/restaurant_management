@@ -59,7 +59,7 @@ class="active"
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-3"><img
-                                                            src="{{ asset('storage/tables/' . $table->img) }}" alt=""
+                                                            src="{{ asset('/storage/tables/' . $table->img) }}" alt=""
                                                             width="100px" class="thumbnail"></div>
                                                     <div class="col-md-9">
                                                         <p><strong>{{ __('messages.code') }} :

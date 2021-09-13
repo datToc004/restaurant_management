@@ -43,7 +43,7 @@ class CategoryTableController extends Controller
     {
         Category::create($request->all());
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('notification', __('messages.no_add_cate'));
     }
 
     /**
@@ -75,7 +75,7 @@ class CategoryTableController extends Controller
         $category->fill($request->all());
         $category->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('notification', __('messages.no_update_cate'));
     }
 
     /**
@@ -89,6 +89,6 @@ class CategoryTableController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')->with('notification', __('messages.no_delete_cate'));
     }
 }
