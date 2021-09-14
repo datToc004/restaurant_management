@@ -8,9 +8,9 @@
                     <div class="card">
                         <div class="card-header">{{ __('messages.login') }}</div>
                         <div class="card-body">
-                            @if (session('thongBao'))
+                            @if (session('notification'))
                                 <div class="alert alert-danger" role="alert">
-                                    <strong>{{ session('thongBao') }}</strong>
+                                    <strong>{{ session('notification') }}</strong>
                                 </div>
                             @endif
                             <form action="{{ route('login.post') }}" method="POST">

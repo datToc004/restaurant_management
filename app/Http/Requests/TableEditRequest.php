@@ -36,7 +36,7 @@ class TableEditRequest extends FormRequest
         return [
             'name.required' => __('messages.name_required'),
             'code.required' => __('messages.code_required'),
-            'code.unique' => __('messages.code_required'),
+            'code.unique' => __('messages.code_unique'),
             'max.required' => __('messages.max_required'),
             'img.image' => __('messages.img_image'),
         ];
