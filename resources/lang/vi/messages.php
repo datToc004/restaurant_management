@@ -155,4 +155,5 @@ return [
     'unnormal' => 'không bình thường',
     'manager_category_table' => 'Quản lí loại bàn',
     'name_category' => 'Tên loại bàn',
+    'thanks' => 'Cảm ơn bạn đã mua hàng, Đơn hàng của bạn đã đặt thành công',
 ];

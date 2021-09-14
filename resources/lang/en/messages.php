@@ -163,4 +163,5 @@ return [
     'unnormal' => 'unnormal',
     'manager_category_table' => 'Manager category table',
     'name_category' => 'Name category',
+    'thanks' => 'Thanks for booking',
 ];

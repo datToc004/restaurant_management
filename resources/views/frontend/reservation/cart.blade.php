@@ -22,7 +22,7 @@
                         <div class="one-forth">
                             <div class="product-img">
                                 <img class="img-thumbnail cart-img"
-                                    src="{{ asset('storage/' . $table->options->img) }}">
+                                    src="{{ asset('/storage/tables/' . $table->options->img) }}">
                             </div>
                             <div class="detail-buy">
                                 <h4>{{ __('messages.code') }} : {{ $table->options->code }}</h4>
@@ -68,7 +68,7 @@
                         <div class="one-forth">
                             <div class="product-img">
                                 <img class="img-thumbnail cart-img"
-                                    src="{{ asset('storage/' . $dish->options->img) }}">
+                                    src="{{ asset('/storage/dishes/' . $dish->options->img) }}">
                             </div>
                             <div class="detail-buy">
                                 <h4>{{ __('messages.code') }} : {{ $dish->options->code }}</h4>
