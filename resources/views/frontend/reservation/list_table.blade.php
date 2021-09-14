@@ -12,7 +12,7 @@
                             <div class="product-entry">
                                 <div class="product-img">
                                     <img class="product-img" width="260" height="44"
-                                        src="{{ asset('storage/dishes/' . $table->img) }}">
+                                        src="{{ asset('/storage/tables/' . $table->img) }}">
                                     <div class="cart">
                                         <p>
                                             <span class="addtocart"><a href="{{ route('cart.table.add') }}"><i

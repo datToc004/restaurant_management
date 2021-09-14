@@ -59,7 +59,7 @@ class="active"
                                             <td>
                                                 <div class="row">
                                                     <div class="col-md-3"><img
-                                                            src="{{ asset('storage/dishes/' . $dish->img) }}"
+                                                            src="{{ asset('/storage/dishes/' . $dish->img) }}"
                                                             alt="Áo đẹp" width="100px" class="thumbnail"></div>
                                                     <div class="col-md-9">
                                                         <p><strong>Mã món ăn : {{ $dish->code }}</strong></p>

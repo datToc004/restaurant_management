@@ -59,7 +59,7 @@ class="active"
                                                     <div class="col-md-12">
                                                         <p><strong>{{ __('messages.address') }} :
                                                                 {{ $user->address }}</strong></p>
-                                                        <p>{{ __('messages.name') }} :{{ $user->email }}</p>
+                                                        <p>{{ __('messages.email') }} :{{ $user->email }}</p>
                                                         <p>{{ __('messages.sex') }}:{{ $user->sex }}</p>
                                                     </div>
                                                 </div>

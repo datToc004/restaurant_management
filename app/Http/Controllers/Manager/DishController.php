@@ -55,7 +55,7 @@ class DishController extends Controller
         }
         $dish->save();
 
-        return redirect()->route('dishes.index');
+        return redirect()->route('dishes.index')->with('notification', __('messages.no_add_dish'));
     }
 
     /**
@@ -95,8 +95,9 @@ class DishController extends Controller
             $request->file('img')->storeAs('public/dishes', $filename, 'local');
             $dish->img = $filename;
         }
+        $dish->save();
 
-        return redirect()->route('dishes.index');
+        return redirect()->route('dishes.index')->with('notification', __('messages.no_update_dish'));
     }
 
     /**
@@ -110,6 +111,6 @@ class DishController extends Controller
         $dish = Dish::findOrFail($id);
         $dish->delete();
 
-        return redirect()->route('dishes.index');
+        return redirect()->route('dishes.index')->with('notification', __('messages.no_delete_dish'));
     }
 }

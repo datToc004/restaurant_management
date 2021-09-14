@@ -21,7 +21,7 @@ class UserController extends Controller
         $user->status = config('restaurant.status_user.block');
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('notification', __('messages.no_block_user'));
     }
 
     public function unBlockUser($id)
@@ -30,6 +30,6 @@ class UserController extends Controller
         $user->status = config('restaurant.status_user.unblock');
         $user->save();
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('notification', __('messages.no_unblock_user'));
     }
 }

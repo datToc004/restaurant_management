@@ -30,7 +30,7 @@ class OrderController extends Controller
         $order->status = config('restaurant.status_order.accept');
         $order->save();
 
-        return redirect()->route('orders.index');
+        return redirect()->route('orders.index')->with('notification', __('messages.no_accept_order'));
     }
 
     public function deleteOrder($id)
@@ -38,7 +38,7 @@ class OrderController extends Controller
         $order = Order::findOrFail($id);
         $order->delete();
 
-        return redirect()->route('orders.index');
+        return redirect()->back()->with('notification', __('messages.no_delete_order'));
     }
 
     public function getAcceptOrders()
@@ -66,7 +66,7 @@ class OrderController extends Controller
         $receipt->order_id = $id;
         $receipt->save();
 
-        return redirect()->route('orders.index');
+        return redirect()->back()->with('notification', __('messages.no_bill_order'));
     }
 
     public function getTime()
@@ -137,7 +137,7 @@ class OrderController extends Controller
         }
         Session::forget('time');
 
-        return redirect()->route('orders.index');
+        return redirect()->route('orders.index')->with('notification', __('messages.no_add_order'));
     }
 
     public function getEditTime($id)
@@ -198,6 +198,6 @@ class OrderController extends Controller
         }
         Session::forget('time');
 
-        return redirect()->route('orders.index');
+        return redirect()->route('orders.index')->with('notification', __('messages.no_edit_order'));
     }
 }
