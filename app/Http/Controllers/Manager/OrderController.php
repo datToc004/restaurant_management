@@ -66,7 +66,7 @@ class OrderController extends Controller
         $receipt->order_id = $id;
         $receipt->save();
 
-        return redirect()->back()->with('notification', __('messages.no_bill_order'));
+        return redirect()->route('orders.accept.get')->with('notification', __('messages.no_bill_order'));
     }
 
     public function getTime()
