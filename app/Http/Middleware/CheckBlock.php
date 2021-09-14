@@ -20,7 +20,7 @@ class CheckBlock
         if (auth()->check() && (auth()->user()->status == config('restaurant.status_user.block'))) {
             Auth::logout();
 
-            return redirect()->route('login');
+            return redirect()->route('login')->with('notification', __('messages.no_block_acc'));
         }
 
         return $next($request);
