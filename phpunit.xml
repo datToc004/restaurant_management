@@ -6,16 +6,7 @@
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit/Models/Receipt.php</directory>
-            <directory suffix="Test.php">./tests/Unit/Models/Reservation.php</directory>
-            <directory suffix="Test.php">./tests/Unit/Models/Role.php</directory>
-        </testsuite>
-        <testsuite name="Unit1">
-            <directory suffix="Test.php">./tests/Unit/Models/Category.php</directory>
-            <directory suffix="Test.php">./tests/Unit/Models/Comment.php</directory>
-            <directory suffix="Test.php">./tests/Unit/Models/Dish.php</directory>
-            <directory suffix="Test.php">./tests/Unit/Models/DishReservation.php</directory>
-            <directory suffix="Test.php">./tests/Unit/Models/Order.php</directory>
+            <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>

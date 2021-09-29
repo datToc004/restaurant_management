@@ -7,6 +7,7 @@ use App\Http\Requests\CategoryTableCreateRequest;
 use App\Http\Requests\CategoryTableRequest;
 use App\Models\Category;
 use App\Models\Table;
+use App\Repositories\Category\CategoryRepositoryInterface;
 use Illuminate\Http\Request;
 
 class CategoryTableController extends Controller
@@ -16,9 +17,16 @@ class CategoryTableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    protected $cateRepo;
+
+    public function __construct(CategoryRepositoryInterface $cateRepo)
+    {
+        $this->cateRepo = $cateRepo;
+    }
+
     public function index()
     {
-        $categories = Category::paginate(config('restaurant.paginate.category'));
+        $categories = $this->cateRepo->getCategories();
 
         return view('manager.category_table.index', compact('categories'));
     }
@@ -41,7 +49,7 @@ class CategoryTableController extends Controller
      */
     public function store(CategoryTableCreateRequest $request)
     {
-        Category::create($request->all());
+        $this->cateRepo->create($request->all());
 
         return redirect()->route('categories.index')->with('notification', __('messages.no_add_cate'));
     }
@@ -54,7 +62,7 @@ class CategoryTableController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
+        $category = $this->cateRepo->find($id);
 
         return view(
             'manager.category_table.edit',
@@ -71,9 +79,7 @@ class CategoryTableController extends Controller
      */
     public function update(CategoryTableRequest $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->fill($request->all());
-        $category->save();
+        $this->cateRepo->update($id, $request->all());
 
         return redirect()->route('categories.index')->with('notification', __('messages.no_update_cate'));
     }
@@ -86,8 +92,7 @@ class CategoryTableController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
+        $this->cateRepo->delete($id);
 
         return redirect()->route('categories.index')->with('notification', __('messages.no_delete_cate'));
     }
