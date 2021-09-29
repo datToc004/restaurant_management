@@ -35,7 +35,6 @@
     <script src="{{ asset('bower_components/start-bower123/backend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bower_components/start-bower123/backend/js/chart.min.js') }}"></script>
     <script src="{{ asset('bower_components/start-bower123/backend/js/easypiechart.js') }}"></script>
-    <script src="{{ asset('bower_components/start-bower123/backend/js/easypiechart-data.js') }}"></script>
     <script src="{{ asset('bower_components/start-bower123/backend/js/bootstrap-datepicker.js') }}"></script>
     @yield('script_add_order')
 </body>
