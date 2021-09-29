@@ -6,7 +6,7 @@ use App\Models\Dish as ModelsDish;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class Dish extends ModelTestCase
+class DishTest extends ModelTestCase
 {
     protected $dish;
 

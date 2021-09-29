@@ -5,7 +5,7 @@ namespace Tests\Unit\Models;
 use App\Models\Category as ModelsCategory;
 use Tests\Unit\ModelTestCase;
 
-class Category extends ModelTestCase
+class CategoryTest extends ModelTestCase
 {
     protected $category;
 

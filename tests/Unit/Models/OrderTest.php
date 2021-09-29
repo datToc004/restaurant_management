@@ -8,7 +8,7 @@ use App\Models\User;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class Order extends ModelTestCase
+class OrderTest extends ModelTestCase
 {
     protected $order;
 

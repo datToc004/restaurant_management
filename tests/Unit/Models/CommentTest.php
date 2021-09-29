@@ -7,7 +7,7 @@ use App\Models\User;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class Comment extends ModelTestCase
+class CommentTest extends ModelTestCase
 {
     protected $comment;
 

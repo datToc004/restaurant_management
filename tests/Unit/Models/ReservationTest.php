@@ -8,7 +8,7 @@ use App\Models\Reservation as ModelsReservation;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class Reservation extends ModelTestCase
+class ReservationTest extends ModelTestCase
 {
     protected $reservation;
 

@@ -7,7 +7,7 @@ use App\Models\DishReservation as ModelsDishReservation;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class DishReservation extends ModelTestCase
+class DishReservationTest extends ModelTestCase
 {
     protected $dishReservation;
 

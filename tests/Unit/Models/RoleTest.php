@@ -6,7 +6,7 @@ use App\Models\Role as ModelsRole;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class Role extends ModelTestCase
+class RoleTest extends ModelTestCase
 {
     protected $role;
 

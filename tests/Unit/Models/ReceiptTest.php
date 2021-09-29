@@ -7,7 +7,7 @@ use App\Models\Receipt as ModelsReceipt;
 use PHPUnit\Framework\TestCase;
 use Tests\Unit\ModelTestCase;
 
-class Receipt extends ModelTestCase
+class ReceiptTest extends ModelTestCase
 {
     protected $receipt;
 
